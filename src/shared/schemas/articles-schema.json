@@ -1,0 +1,117 @@
+
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "urn:table:articles",
+  "type": "object",
+  "title": "Articles",
+  "description": "Stores CMS blog articles with full metadata and content for the Articles collection.",
+  "required": ["title", "slug", "status"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "title": "ID",
+      "description": "Auto-incrementing primary key.",
+      "readOnly": true,
+      "primaryKey": true
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "The article's title.",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "title": "Slug",
+      "description": "URL-friendly unique slug generated from the title.",
+      "unique": true,
+      "index": true,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "excerpt": {
+      "type": "string",
+      "title": "Excerpt",
+      "description": "Short summary or excerpt of the article.",
+      "maxLength": 512
+    },
+    "cover_image_url": {
+      "type": "string",
+      "title": "Cover Image URL",
+      "description": "URL to the cover image.",
+      "format": "uri"
+    },
+    "author": {
+      "type": "string",
+      "title": "Author",
+      "description": "Name of the article's author."
+    },
+    "published_date": {
+      "type": "string",
+      "title": "Published Date",
+      "description": "Date when the article was published.",
+      "format": "date-time"
+    },
+    "tags": {
+      "type": "string",
+      "title": "Tags",
+      "description": "JSON stringified array of tags.",
+      "default": "[]"
+    },
+    "body_html": {
+      "type": "string",
+      "title": "Body HTML",
+      "description": "Article body content stored as HTML rich text.",
+      "default": ""
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "description": "Publication status: 'draft' or 'published'.",
+      "enum": ["draft", "published"],
+      "default": "draft",
+      "index": true
+    },
+    "scheduled_publish_at": {
+      "type": ["string", "null"],
+      "title": "Scheduled Publish At",
+      "description": "Optional date-time to schedule publishing.",
+      "format": "date-time"
+    },
+    "seo_meta_title": {
+      "type": "string",
+      "title": "SEO Meta Title",
+      "description": "Auto-generated SEO meta title based on title and excerpt."
+    },
+    "seo_meta_description": {
+      "type": "string",
+      "title": "SEO Meta Description",
+      "description": "Auto-generated SEO meta description based on excerpt."
+    },
+    "og_image_url": {
+      "type": "string",
+      "title": "OpenGraph Image URL",
+      "description": "URL for OpenGraph image, usually the cover image.",
+      "format": "uri"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At",
+      "description": "Timestamp of record creation.",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At",
+      "description": "Timestamp of last record update.",
+      "readOnly": true
+    }
+  },
+  "indexes": [
+    { "field": "slug" },
+    { "field": "status" },
+    { "field": "published_date" }
+  ]
+}
+

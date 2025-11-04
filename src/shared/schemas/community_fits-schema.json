@@ -1,0 +1,63 @@
+
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "urn:table:community_fits",
+  "type": "object",
+  "title": "Community Fits",
+  "description": "Stores user-submitted outfit photos ('fits') with captions and metadata for the Community Fits section.",
+  "required": ["image_urls", "caption", "approved"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "title": "ID",
+      "description": "Auto-incrementing primary key.",
+      "readOnly": true,
+      "primaryKey": true
+    },
+    "user_handle": {
+      "type": "string",
+      "title": "User Handle",
+      "description": "Optional user name or handle who submitted the fit."
+    },
+    "image_urls": {
+      "type": "string",
+      "description": "JSON stringified array of image URLs uploaded by the user.",
+      "default": "[]"
+    },
+    "caption": {
+      "type": "string",
+      "title": "Caption",
+      "description": "Short caption or description for the fit."
+    },
+    "approved": {
+      "type": "integer",
+      "title": "Approved",
+      "description": "Admin approval status: 1 for approved, 0 for pending or rejected.",
+      "default": 0
+    },
+    "like_count": {
+      "type": "integer",
+      "title": "Like Count",
+      "description": "Number of likes for the post.",
+      "default": 0
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At",
+      "description": "Timestamp of record creation.",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Updated At",
+      "description": "Timestamp of last record update.",
+      "readOnly": true
+    }
+  },
+  "indexes": [
+    { "field": "user_handle" },
+    { "field": "approved" }
+  ]
+}

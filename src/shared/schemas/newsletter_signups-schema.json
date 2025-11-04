@@ -1,0 +1,55 @@
+
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "urn:table:newsletter_signups",
+  "type": "object",
+  "title": "Newsletter Signups",
+  "description": "Stores newsletter signup submissions for NYUThrowingAFit brand.",
+  "required": ["uniqueness_check", "form_data"],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "title": "ID",
+      "description": "Auto-incrementing primary key.",
+      "readOnly": true,
+      "primaryKey": true
+    },
+    "uniqueness_check": {
+      "type": "string",
+      "description": "Unique identifier for deduplication, extracted from email field.",
+      "unique": true,
+      "index": true
+    },
+    "form_data": {
+      "type": "string",
+      "description": "Full newsletter signup form submission stored as JSON string."
+    },
+    "notification_email_sent": {
+      "type": "integer",
+      "description": "Boolean flag (1 for true, 0 for false) indicating if notification email was sent.",
+      "default": 0
+    },
+    "reply_email_sent": {
+      "type": "integer",
+      "description": "Boolean flag (1 for true, 0 for false) indicating if reply email was sent.",
+      "default": 0
+    },
+    "email_sent_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last email attempt."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of record creation.",
+      "readOnly": true
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last record update.",
+      "readOnly": true
+    }
+  }
+}
