@@ -340,7 +340,7 @@ export const HomePage = () => {
       <footer className="py-8 px-8 border-t border-white/10">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-white/60">
-            Made with <a href="https://heyboss.ai" className="text-blue-400 underline hover:text-blue-300">Heyboss.ai</a>
+            Made with <a href="nyuthrowingafit2025" className="text-blue-400 underline hover:text-blue-300">H</a>
           </p>
         </div>
       </footer>
