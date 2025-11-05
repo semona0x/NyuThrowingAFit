@@ -11,15 +11,15 @@ import React, { useEffect, useMemo, useRef } from 'react';
 type Fit = { id: number; image: string; caption: string };
 
 const sampleFits: Fit[] = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=600&fit=crop&crop=faces', caption: 'Street style vibes' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=600&fit=crop&crop=faces', caption: 'Urban chic' },
-  { id: 3, image: 'https://images.unsplash.com/photo-1581803118522-7b72a50f7e9f?w=400&h=600&fit=crop&crop=faces', caption: 'Minimalist aesthetic' },
-  { id: 4, image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&crop=faces', caption: 'Bold patterns' },
-  { id: 5, image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=600&fit=crop&crop=faces', caption: 'Classic cuts' },
-  { id: 6, image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=600&fit=crop&crop=faces', caption: 'Trendy layers' },
-  { id: 7, image: 'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=600&fit=crop&crop=faces', caption: 'Casual elegance' },
-  { id: 8, image: 'https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=400&h=600&fit=crop&crop=faces', caption: 'Contemporary style' },
+  { id: 1, image: '/hero/IMG_1473.jpg', caption: 'Street style vibes' },
+  { id: 2, image: '/hero/IMG_1474.jpg', caption: 'Urban chic' },
+  { id: 3, image: '/hero/IMG_1475.jpg', caption: 'Minimalist aesthetic' },
+  { id: 4, image: '/hero/IMG_1476.jpg', caption: 'Bold patterns' },
+  { id: 5, image: '/hero/IMG_1477.jpg', caption: 'Classic cuts' },
+  { id: 6, image: '/hero/IMG_1478.jpg', caption: 'Trendy layers' },
+  { id: 7, image: '/hero/IMG_1479.jpg', caption: 'Casual elegance' },
 ];
+
 
 export const CommunityFits: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
