@@ -18,6 +18,8 @@ import { ChatbotWidget } from "../components/ChatbotWidget";
 import { InstagramEmbed } from "react-social-media-embed";
 import { Instagram, ArrowDown, ExternalLink } from "lucide-react";
 import formConfigs from "../../shared/form-configs.json";
+import { LatestArticles } from "../../components/LatestArticles";
+
 
 // Import feature configurations
 import socialMediaConfig from "../../../Features/Social Media Sharing.Social Media Sharing.1.json";
@@ -135,20 +137,21 @@ export const HomePage = () => {
           </Link>
           
           {/* Navigation Links */}
-          <nav className="flex items-center space-x-6 md:space-x-8">
-            <button 
-              onClick={() => scrollToSection("community-fits")}
-              className="text-sm md:text-base font-medium uppercase tracking-wider text-white/80 hover:text-white transition-colors duration-300"
-            >
-              Community
-            </button>
-            <Link 
-              to="/submit-fit"
-              className="text-sm md:text-base font-medium uppercase tracking-wider bg-white text-black px-4 py-2 rounded-full hover:bg-white/90 transition-colors duration-300"
-            >
-              Submit Your Fit
-            </Link>
-          </nav>
+<nav className="flex items-center space-x-6 md:space-x-8">
+  <Link
+    to="/articles"
+    className="text-sm md:text-base font-medium uppercase tracking-wider text-white/80 hover:text-white transition-colors duration-300"
+  >
+    Articles
+  </Link>
+  <Link 
+    to="/submit-fit"
+    className="text-sm md:text-base font-medium uppercase tracking-wider bg-white text-black px-4 py-2 rounded-full hover:bg-white/90 transition-colors duration-300"
+  >
+    Submit Your Fit
+  </Link>
+</nav>
+
         </header>
 
         {/* Dual Video Container */}
@@ -192,7 +195,9 @@ export const HomePage = () => {
       </section>
 
       <TwoUpParallaxHero />
-
+      
+      <LatestArticles />
+      
       {/* Community Fits Section */}
       <CommunityFits />
 
