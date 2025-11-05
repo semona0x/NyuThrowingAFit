@@ -5,7 +5,6 @@
     "node": "20.x"
   },
   "dependencies": {
-    "@cloudflare/vite-plugin": "1.7.5",
     "@cloudflare/workers-types": "latest",
     "@hey-boss/users-service": "latest",
     "@tailwindcss/typography": "^0.5.19",
@@ -28,7 +27,7 @@
     "tailwindcss": "3.4.17",
     "tailwindcss-motion": "1.1.0",
     "typescript": "5.8.3",
-    "vite": "6.4.1",
+    "vite": "5.4.10",
     "wrangler": "4.27.0"
   },
   "scripts": {
